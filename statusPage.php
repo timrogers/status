@@ -1,15 +1,17 @@
 <?php
   class StatusPage {
-    const STATUS_PAGE_URL = "https://api.statuspage.io/v1/pages/xnsxlfgbqz6k/components.json";
-
+    private $apiUrl;
     private $authorizationHeader;
     private $rawResult;
     private $jsonResult;
 
-    public function __construct($authorizationHeader) {
+    public function __construct($apiUrl, $authorizationHeader) {
+      $this->apiUrl = $apiUrl;
       $this->authorizationHeader = $authorizationHeader;
     }
 
+    // Fetches StatusPage.io statuses fro each server from their API using the provided
+    // URL and Authorization header value
     public function rawResult() {
       if (!$this->rawResult) {
         $options = array(
@@ -20,7 +22,7 @@
         );
 
         $context = stream_context_create($options);
-        $this->rawResult = file_get_contents(self::STATUS_PAGE_URL, false, $context);
+        $this->rawResult = file_get_contents($this->apiUrl, false, $context);
       }
 
       return $this->rawResult;

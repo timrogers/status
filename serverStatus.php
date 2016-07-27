@@ -28,6 +28,7 @@
 
       $result = $statement->get_result();
 
+      // Insert a new record if the server isn't recorded, or update an existing one
       if ($result->num_rows == 0) {
         $insertStatement = $this->connection->prepare("INSERT INTO server_statuses (name, status) VALUES (?, ?)");
         $insertStatement->bind_param('ss', $name, $status);

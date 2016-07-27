@@ -1,10 +1,7 @@
 <?php
-define('MYSQL_HOST', 'localhost');
-define('MYSQL_USERNAME', 'root');
-define('MYSQL_PASSWORD', 'root');
-define('MYSQL_DATABASE_NAME', "server_status");
-define('WHMCS_API_URL', 'http://example.com/whmcs/');
-define('WHMCS_USERNAME', 'username');
-define('WHMCS_PASSWORD', 'password');
-define('STATUSPAGE_AUTHORIZATION_HEADER', "OAuth a-key");
+define('STATUS_MYSQL_HOST', 'localhost');
+define('STATUS_MYSQL_USERNAME', 'root');
+define('STATUS_MYSQL_PASSWORD', 'root');
+define('STATUS_MYSQL_DATABASE_NAME', "server_status");
+define('STATUS_STATUSPAGE_AUTHORIZATION_HEADER', "OAuth a-key");
 ?>
