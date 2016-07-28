@@ -1,6 +1,6 @@
 <?php
 require('/home/freetime/server_status/config.inc.php');
-require('/home/freetime/server_status/serverStatus.php');
+require('/home/freetime/server_status/ServerStatus.php');
 
 use Carbon\Carbon;
 use Illuminate\Database\Capsule\Manager as Capsule;
